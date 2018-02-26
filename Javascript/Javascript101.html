@@ -583,6 +583,39 @@ var equals = true == false; //true;
 ```
 ---
 
+# if Statements
+
+```js
+if (age >= 21) {
+    console.log("You get free beer");
+  }
+```
+
+---
+# if - else Statements
+
+```js
+if (age >= 21) {
+  console.log("You get free beer");
+} else {
+  console.log("Sorry no beer for you");
+}
+```
+
+---
+# if - else if - else Statements
+
+```js
+if (age >= 21) {
+  console.log("You get free beer");
+} else if (age < 18) {
+  console.log("What are you even doing here?");
+} else {
+  console.log("Sorry no beer for you");
+}
+```
+---
+
 class: inverse, center, middle
 
 #  Loops
@@ -626,9 +659,13 @@ for (var count=0; count < 10; count ++)
 ```
 
 ---
+
+class: inverse, center, middle
 # Collections
 
 ---
+
+class: inverse, center, middle
 # Arrays
 ---
 
@@ -908,6 +945,19 @@ for (var i= 0; i<keyNameList.length; i++){
     console.log(characterSheet[keyNameList[i]]);
 }
 ```
+---
+
+class: inverse, center, middle
+# Functions
+---
+# Functions
+
+function hello (name) {
+    var output = 'Hello ' + name;
+    console.log(output);
+    return output;
+  }
+
 ---
 class: inverse, center, middle
 # Finito!

@@ -23,16 +23,66 @@
 			myOverlay.style.top = window.pageYOffset + 'px';
 			myOverlay.style.left = window.pageXOffset + 'px';
 
+			//Create image element
 			var imageSrc = e.target.src;
+			
 			var largeImage = document.createElement('img');
 			largeImage.id = 'largeImage';
 			largeImage.src = imageSrc.substr(0, imageSrc.length-7) + '.jpg';
+
+			//console.log(e.target.src);
 			largeImage.style.display = 'block';
 			largeImage.style.position = 'absolute';
-			myOverlay.appendChild(largeImage);
+
+			//myOverlay.appendChild(largeImage);
+			
+			//wait until the image has loaded
+			largeImage.addEventListener('load', function() {
+
+				//Resize if taller
+				if (this.height > window.innerHeight) {
+					this.ratio = window.innerHeight / this.height;
+					this.height = this.height * this.ratio;
+					this.width = this.width * this.ratio;
+				}
+
+				//Resize if wider
+				if (this.width > window.innerWidth) {
+					this.ratio = window.innerWidth / this.width;
+					this.height = this.height * this.ratio;
+					this.width = this.width * this.ratio;
+				}
+
+				centerImage(this);
+				myOverlay.appendChild(largeImage);
+
+			}); //image has loaded
+
+			largeImage.addEventListener('click', function() {
+				if (myOverlay) {
+					myOverlay.parentNode.removeChild(myOverlay);
+				}
+			}, false)
+
+			window.addEventListener('scroll', function() {
+				if (myOverlay) {
+					myOverlay.style.top = window.pageYOffset + 'px';
+					myOverlay.style.left = window.pageXOffset + 'px';
+				}
+			}, false)
 
 		} // target is an image
 
 	}, false); //image is clicked
+
+	function centerImage(theImage) {
+		var myDifX = (window.innerWidth - theImage.width)/2;
+		var myDifY = (window.innerHeight - theImage.height)/2;
+
+		theImage.style.top = myDifY + 'px';
+		theImage.style.left = myDifX + 'px';
+
+		return theImage;
+	}
 
 })(); //self executing function

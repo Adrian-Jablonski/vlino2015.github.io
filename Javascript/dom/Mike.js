@@ -28,10 +28,7 @@
     //can't get newCard pushed into dealerHand
     dealerHand.push(newCard);
     
-    console.log("here");
     console.log(dealerHand[0]);
-
-    //console.log(dealerHand.lastIndexOf());
     
     var addCard = document.createElement('img');
     console.log(addCard);

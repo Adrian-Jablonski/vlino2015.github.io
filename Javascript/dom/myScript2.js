@@ -1,5 +1,6 @@
 (function() {
 
+	
 	//Selecting our node
 	var myNode = document.querySelector('.artistlist ul');
 
@@ -33,6 +34,7 @@
 			//console.log(e.target.src);
 			largeImage.style.display = 'block';
 			largeImage.style.position = 'absolute';
+			
 
 			//myOverlay.appendChild(largeImage);
 			

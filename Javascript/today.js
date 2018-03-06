@@ -15,15 +15,18 @@
 //   aPerson1.greet(aPerson2);
 //Closure
 
+
+
+
 function add (a, b) {
 
     
-
     var innerAddFunction = function () {
         // var a = 3;
     // var b = 4;
       return a+b;
     }
+    
     
     return innerAddFunction;
   }

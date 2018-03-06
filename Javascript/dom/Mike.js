@@ -44,5 +44,5 @@
     cardSpot.appendChild(addCard);
     console.log('test link');
     
-    
+   
     }());

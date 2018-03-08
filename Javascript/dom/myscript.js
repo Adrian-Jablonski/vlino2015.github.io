@@ -3,7 +3,7 @@
    
 	//Selecting our node
 	var myNode = document.querySelector('.artistlist ul');
-
+  
 	myNode.addEventListener("click", function(e) {
 
 		//console.log(e);

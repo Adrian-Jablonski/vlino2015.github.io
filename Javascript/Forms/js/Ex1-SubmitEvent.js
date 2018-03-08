@@ -1,18 +1,26 @@
+//$(document).ready(function(){
+  
+  $("#login").submit( function(e) {
+    //e.preventDefault();
+    var userName = $("#username").val();
+    alert(userName);
+  });
 
-  (function(){
+//});
+  // (function(){
 
-    var form = document.getElementById('login');
+  //   var form = document.getElementById('login');
 
-    form.addEventListener("submit", function(e)
-    {
-        e.preventDefault();  //prevents default exectuion of /login
+  //   form.addEventListener("submit", function(e)
+  //   {
+  //       e.preventDefault();  //prevents default exectuion of /login
                     
-        var elements = this.elements;                    // Get all form elements
-        var username = elements.username.value;          // Select username entered
-        var msg      = 'Welcome ' + username;            // Create welcome message
-        document.getElementById('main').textContent = msg; // Write welcome message
+  //       var elements = this.elements;                    // Get all form elements
+  //       var username = elements.username.value;          // Select username entered
+  //       var msg      = 'Welcome ' + username;            // Create welcome message
+  //       document.getElementById('main').textContent = msg; // Write welcome message
 
 
-    }, false);
+  //   }, false);
 
-  })(); //self executing function
+  // })(); //self executing function

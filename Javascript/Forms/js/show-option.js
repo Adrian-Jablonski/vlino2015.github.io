@@ -6,8 +6,11 @@
   otherText = document.getElementById('other-text');   // Other text input
   otherText.className = 'hide';                        // Hide other text input
 
-  for (var i = [0]; i < options.length; i++) {         // Loop through radios
-    addEvent(options[i], 'click', radioChanged);       // Add event listener
+  for (var i = [0]; i < options.length; i++) { 
+    
+    // Loop through radios
+    options[i].addEventListener("click", radioChanged);
+          // Add event listener
   }
 
   function radioChanged() {

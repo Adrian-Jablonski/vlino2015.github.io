@@ -2,10 +2,11 @@
   var bio      = document.getElementById('bio'),        // <textarea> element
       bioCount = document.getElementById('bio-count');  // Character count el
 
-  addEvent(bio, 'focus', updateCounter);       // Call updateCounter() on focus
-  addEvent(bio, 'input', updateCounter);       // Call updateCounter() on input
+    
+     bio.addEventListener("focus", updateCounter);       // Call updateCounter() on focus
+     bio.addEventListener("input", updateCounter);       // Call updateCounter() on input
 
-  addEvent(bio, 'blur', function () {          // On leaving the element
+     bio.addEventListener('blur', function () {          // On leaving the element
     if (bio.value.length <= 140) {             // If bio is not too long
       bioCount.className = 'hide';             // Hide the counter
     }

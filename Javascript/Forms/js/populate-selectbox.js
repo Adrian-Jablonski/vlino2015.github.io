@@ -1,7 +1,7 @@
 
   (function(){
 
-   var type  = document.getElementById('equipmentType');// Type select box
+  var type  = document.getElementById('equipmentType');// Type select box
   var model = document.getElementById('model');        // Model select box
   var cameras = {                                      // Object stores cameras
     bolex: 'Bolex Paillard H8',
@@ -17,7 +17,8 @@
   };
 
   // WHEN THE USER CHANGES THE TYPE SELECT BOX
-  addEvent(type, 'change', function() {
+  type.addEventListener("change", function(){
+ 
     if (this.value === 'choose') {                // No selection made
       model.innerHTML = '<option>Please choose a type first</option>';
       return;                                     // No need to proceed further

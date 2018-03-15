@@ -180,18 +180,104 @@ layout: true
 
 class: inverse, center, middle
 
-#  DOM Programming
-
-### DOM DOM DOM DOM ... DOM
-
----
+#  Git
 
 
 
 ---
 
+# Fetching and Merging
+
+git pull = git fetch + git merge
+
+```git 
+
+$git fetch
+```
+
+```git 
+
+$git merge
+```
 
 ---
+
+# Log of your commits
+
+local log
+```git 
+
+$git log --oneline
+```
+
+remote log
+```git 
+
+$git log  --oneline origin/master
+```
+
+---
+
+# Find what's on your branch 
+
+local branch
+```git 
+
+$git branch
+```
+
+remote branch
+```git 
+
+$git branch -r
+```
+
+---
+
+
+```git 
+
+$git branch -d name
+```
+
+delete off of gitHub
+```git 
+
+$git push origin --delete branchName
+```
+---
+
+# Push a new branch upto repsoitory
+
+remote log
+```git 
+
+$git push -b orgin branchName
+```
+
+---
+
+# branch on your command line
+
+```bash 
+
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
+
+```
+
+
+```
+if [ -f ~/.git-completion.bash ];then
+source ~/.git-completion.bash
+fi
+
+```
+
+```bash 
+
+export PS1='$\W(__git_ps1 "(%s)") >'
+
+```
 
 ---
 

@@ -15,7 +15,13 @@
 //   aPerson1.greet(aPerson2);
 //Closure
 
+var p = new Promise(function(resolve, reject) {
+  resolve("hello world");
+});
 
+p.then(function(str) {
+  alert(str);
+});
 
 
 function add (a, b) {

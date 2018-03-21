@@ -1,39 +1,77 @@
-var express = require('express'); 
 
-var app = express(); 
+var express = require('express');
 
-var dataFile = require('.app/data/data.json');
-
-app.get('/', function(req, res) { 
+var dataFile = require('./data/data.json');
+var app = express();
 
 
 
-//template strings - more flexible send command
+app.get('/speaker', function(req, res) {
+ 
+    var info = "";
 
-var info = '';
-dataFile.speakers.foreach(function(item){
+    dataFile.speakers.forEach(function(item){
 
-    info += `
-    
-    <li>
-        <h2>${item.name}</h2>
-        <p>${item.summary}</p>
-    </li>
-    `
+        info += `
+            <li>
+            <h2>${item.name}</h2>
+            <p>${item.summary}</p>
+            </li>
+
+        `;
+        
+    });  // end of foreach loop
 
     res.send(
         `
-        Roux Academy Meetups</h1>
-        ${info}
-        
-        `);
-})
+            <h1>Speakers</h1>
+            ${info}
+        `
+    ); //end of res.send
+    
+});//end of app.get
 
-}); 
+app.get('/speaker/:speakerid', function(req, res) {
+ 
+    var speaker = dataFile.speakers[req.params.speakerid];
 
-app.listen(3000, function(){ 
+    res.send(
+        `
+            
+            <li>
+            <h1>${speaker.title}</h1>
+            <h2>${speaker.name}</h2>
+            <p>${speaker.summary}</p>
+            </li>
+            
+        `
+    ); //end of res.send
+    
+});//end of app.get
 
-console.log('Example app listening on port 3000!'); 
 
-}); 
+app.listen(1830, function(){
+    console.log('Example app listening on port ');
+});
+
+// app.get('/hello1', function(req, res){
+//     var name = req.query.name || 'world';
+//     res.send('Hello ' + name + '!');
+// });
+
+
+
+// app.get('/about', function(req, res) {
+//     res.send('<h1>About Page</h1>');
+// });
+
+// app.get('/contact', function(req, res) {
+//     res.send('<h1>Contact Page</h1>');
+// });
+
+
+
+
+
+
 
